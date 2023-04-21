@@ -1,0 +1,21 @@
+<h2>bienvenido {{user.firstName}}</h2>
+<h3>Rol: {{user.rol}}</h3>
+<a href="http://localhost:8080/auth/logout"><button>Cerrar sesión</button></a>
+<h1>Productos</h1>
+<div class="product-container">
+  {{#each productsMapped}}
+    <div class="product-item">
+      <img src="{{this.img}}" alt="">
+      <li>
+        <h3>{{this.name}}</h3>
+        <h4>{{this.type}}</h4>
+        <p>{{this.description}}</p>
+        <p>{{this.unitPrice}}</p>
+        <button class="btn-add-to-cart" data-product-id="{{id}}"> Añadir al carrito</button>
+        <a href=""><button>Editar producto</button></a>
+      </li>
+    </div>
+  {{/each}}
+</div>
+
+<script src="/js/products.js"></script>
